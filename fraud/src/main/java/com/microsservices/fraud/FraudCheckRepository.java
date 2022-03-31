@@ -4,5 +4,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FraudRepository extends MongoRepository<FraudCheckHistory, String> {
+public interface FraudCheckRepository extends MongoRepository<FraudCheckHistory, String> {
 }

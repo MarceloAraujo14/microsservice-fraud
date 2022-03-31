@@ -15,7 +15,7 @@ public class FraudApplication {
 	}
 
 	@Bean
-	CommandLineRunner runner(FraudRepository repository){
+	CommandLineRunner runner(FraudCheckRepository repository){
 		return args -> {
 			FraudCheckHistory fraud = new FraudCheckHistory(
 					1, false, LocalDateTime.now()

@@ -1,10 +1,16 @@
 package com.microsservices.fraud;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Document
 public class FraudCheckHistory {
 
@@ -14,19 +20,21 @@ public class FraudCheckHistory {
     private Boolean isFraudster;
     private LocalDateTime createdAt;
 
-    public FraudCheckHistory(String id, Integer customerId, Boolean isFraudster, LocalDateTime createdAt) {
-        this.id = id;
-        this.customerId = customerId;
-        this.isFraudster = isFraudster;
-        this.createdAt = createdAt;
-    }
-
     public FraudCheckHistory(Integer customerId, Boolean isFraudster, LocalDateTime createdAt) {
         this.customerId = customerId;
         this.isFraudster = isFraudster;
         this.createdAt = createdAt;
     }
 
-    public FraudCheckHistory() {
+
+
+    @Override
+    public String toString() {
+        return "FraudCheckHistory{" +
+                "id='" + id + '\'' +
+                ", customerId=" + customerId +
+                ", isFraudster=" + isFraudster +
+                ", createdAt=" + createdAt +
+                '}';
     }
 }
