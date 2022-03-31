@@ -1,7 +1,13 @@
 package com.microsservices.customer;
 
-public record CustomerRegistrationRequest(
-        String firstName,
-        String lastName,
-        String email) {
+import lombok.*;
+
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class CustomerRegistrationRequest {
+   private String firstName;
+   private String lastName;
+   private String email;
 }
