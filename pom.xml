@@ -18,6 +18,7 @@
 		<module>customer</module>
 		<module>fraud</module>
 		<module>eureka-server</module>
+		<module>gateway</module>
 	</modules>
 
 	<properties>
