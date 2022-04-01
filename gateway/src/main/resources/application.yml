@@ -1,7 +1,35 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /gateway
 
 spring:
   application:
-    name: registry
-server:
-  port: 8080
+    name: gateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: customer
+          uri: lb://CUSTOMER
+          predicates:
+            - Path=/customer/**
+
+        - id: fraud
+            uri: lb://FRAUD
+            predicates:
+              - Path=/fraud/**
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
 
