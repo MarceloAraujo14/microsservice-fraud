@@ -1,12 +1,8 @@
 server:
   port: 8080
-  servlet:
-    context-path: /gateway
-
 spring:
   application:
     name: gateway
-
   cloud:
     gateway:
       discovery:
@@ -18,18 +14,19 @@ spring:
           uri: lb://CUSTOMER
           predicates:
             - Path=/customer/**
-
         - id: fraud
-            uri: lb://FRAUD
-            predicates:
-              - Path=/fraud/**
+          uri: lb://FRAUD
+          predicates:
+            - Path=/fraud/**
 
 eureka:
   instance:
-    prefer-ip-address: true
+    hostname: localhost
+    port: 8761
   client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-    fetch-registry: true
-    register-with-eureka: true
-
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+    server:
+      wait-time-in-ms-when-sync-empty: 3000
