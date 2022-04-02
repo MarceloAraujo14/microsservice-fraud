@@ -6,10 +6,12 @@
 		<groupId>com.microsservices</groupId>
 		<artifactId>microsservices</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<artifactId>customer</artifactId>
 	<name>customer</name>
+	<packaging>jar</packaging>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

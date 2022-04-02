@@ -19,6 +19,7 @@
 		<module>fraud</module>
 		<module>eureka-server</module>
 		<module>gateway</module>
+		<module>notification</module>
 	</modules>
 
 	<properties>

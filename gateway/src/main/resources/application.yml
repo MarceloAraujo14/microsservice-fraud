@@ -18,6 +18,10 @@ spring:
           uri: lb://FRAUD
           predicates:
             - Path=/fraud/**
+          filters:
+            - name: CircuitBreaker
+              args:
+
 
 eureka:
   instance:

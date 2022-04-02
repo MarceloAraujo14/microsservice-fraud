@@ -9,3 +9,4 @@ Registration service to customer wich verify if the request can be a fraud.
  - PostgreSQL
  - Docker
  - Kafka
+ - RabbitMQ
