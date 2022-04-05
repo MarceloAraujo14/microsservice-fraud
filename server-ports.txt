@@ -1,0 +1,12 @@
+gateway: 8080
+fraud: 8082 / 8085
+customer: 8083
+eureka-server: 8761
+notification: 8084
+
+bd:
+postgres: 5432
+mongo: 8081
+
+rabbitmq: "5672:5672"
+          "15672:15672"

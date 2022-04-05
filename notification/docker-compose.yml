@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  rabbitmq:
+    image: rabbitmq:3.9.11-alpine
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - spring
+
+
+networks:
+  spring:
+    driver: bridge
