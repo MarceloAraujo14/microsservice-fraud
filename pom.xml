@@ -21,6 +21,7 @@
 		<module>gateway</module>
 		<module>notification</module>
 		<module>clients</module>
+		<module>amqp</module>
 	</modules>
 
 	<properties>

@@ -14,13 +14,20 @@ spring:
           uri: lb://CUSTOMER
           predicates:
             - Path=/customer/**
+
         - id: fraud
           uri: lb://FRAUD
           predicates:
             - Path=/fraud/**
-          filters:
-            - name: CircuitBreaker
+
+        - id: notification
+          uri: lb://NOTIFICATION
+          predicates:
+            - Path=/notification/**
+          filter:
+            - name: "CircuitBreaker"
               args:
+
 
 
 eureka:
